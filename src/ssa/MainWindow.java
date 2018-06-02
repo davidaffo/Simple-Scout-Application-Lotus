@@ -269,13 +269,13 @@ public class MainWindow extends javax.swing.JFrame {
                         scrollPane_1.setViewportView(ourPane);
                         
                                 ourPane.setEditable(false);
-                                ourPane.setFont(new Font("Tahoma", Font.PLAIN, 70)); // NOI18N
+                                ourPane.setFont(new Font("Tahoma", Font.PLAIN, 70));
                                 ourPane.setForeground(new java.awt.Color(0, 255, 0));
                                 ourPane.setFocusable(false);
                                 jLabel3 = new javax.swing.JLabel();
                                 scrollPane_1.setColumnHeaderView(jLabel3);
                                 
-                                        jLabel3.setText("Noi:");
+                                        jLabel3.setText(lang.getString("ourScore"));
                                         jLabel3.setFocusable(false);
                         
                         scrollPane_2 = new JScrollPane();
@@ -286,12 +286,12 @@ public class MainWindow extends javax.swing.JFrame {
                         scrollPane_2.setViewportView(oppPane);
                         
                                 oppPane.setEditable(false);
-                                oppPane.setFont(new Font("Tahoma", Font.PLAIN, 70)); // NOI18N
+                                oppPane.setFont(new Font("Tahoma", Font.PLAIN, 70));
                                 oppPane.setForeground(new java.awt.Color(255, 0, 0));
                                 jLabel4 = new javax.swing.JLabel();
                                 scrollPane_2.setColumnHeaderView(jLabel4);
                                 
-                                        jLabel4.setText("Avversari:");
+                                        jLabel4.setText(lang.getString("oppScore"));
                                         jLabel4.setFocusable(false);
                         
                         scrollPane = new JScrollPane();
