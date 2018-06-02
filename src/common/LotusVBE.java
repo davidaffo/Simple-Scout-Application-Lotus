@@ -52,6 +52,13 @@ public class LotusVBE {
 	}
 	
 
+	public static void createEnvironment(){ //creates necessary directories if they are not found
+		new File(Constants.ROOT+"Games").mkdirs();
+		new File(Constants.ROOT+"LotusData").mkdirs();
+		new File(Constants.ROOT+"LotusData/Teams").mkdirs();
+	}
+	
+
 	public static String readFile(String path) throws IOException { //salvataggio file in una stringa
 		byte[] encoded = Files.readAllBytes(Paths.get(path));
 		return new String(encoded, StandardCharsets.UTF_8);
