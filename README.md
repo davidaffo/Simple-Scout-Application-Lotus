@@ -9,7 +9,7 @@ See manual for description and start scouting!
 Download the latest release version from here https://github.com/davidaffo/Simple-Scout-Application-Lotus/releases.
 
 ### - Installing:
-Just extract the folder inside the zip file where you want and start!
+Just extract the folder inside the zip file where you want and get started!
 
 ### - Updating:
 Download the latest release zip, extract and overwrite the files in your directory.
