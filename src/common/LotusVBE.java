@@ -31,7 +31,7 @@ public class LotusVBE {
 	public static Images img;
 
 	//other
-	public final static String version = "1.0";
+	public final static String version = "1.0.1";
 	
 	static void startSSA(){
 		ssa.SSALotus instance = new ssa.SSALotus();
