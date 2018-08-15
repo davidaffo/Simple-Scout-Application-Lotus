@@ -121,7 +121,7 @@ public class Skill implements Serializable{
 	}
 
 	public String getName(){
-		return SSALotus.lang.getString(this.name);
+		return SSALotus.lang.getString(this.name).toLowerCase();
 	}
 
 	//statistic indexes
@@ -145,14 +145,20 @@ public class Skill implements Serializable{
 	public float getPositivity(){
 		if(getTotal()==0)
 			return 0;
-		return ((float)(getMark(marks.length-1)+getMark(marks.length-2))/(float)getTotal())*100;
+		return ((float)getPositiveShot()/(float)getTotal())*100;
+	}
+	
+	public int getPositiveShot(){
+		return getMark(marks.length-1)+getMark(marks.length-2);
 	}
 
 	public float getEfficiency(){
 		if(getTotal()==0)
 			return 0;
 		if(this.name.equals("dig"))
-			return ((float)(getMark(marks.length-1)-getMark(0)-getMark(1))/(float)getTotal())*100;
+			return ((float)(getPositiveShot()-getMark(0)-getMark(1))/(float)getTotal())*100;
+		if(this.name.equals("serve") || this.name.equals("receive"))
+			return ((float)(getPositiveShot()-getMark(0))/(float)getTotal())*100;		
 		return ((float)(getMark(marks.length-1)-getMark(0))/(float)getTotal())*100;
 	}
 
