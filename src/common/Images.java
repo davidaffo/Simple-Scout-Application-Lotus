@@ -53,6 +53,7 @@ public class Images {
 	public ImageIcon sheet;
 	public ImageIcon preview;
 	public ImageIcon save;
+	public ImageIcon update;
 	
 	public Images (){
 		lotusIcon  = new ImageIcon(getClass().getResource("/images/lotus.png"));
@@ -87,6 +88,7 @@ public class Images {
 		sheet = new ImageIcon(getClass().getResource("/images/sheet.png"));
 		preview = new ImageIcon(getClass().getResource("/images/preview.png"));
 		save = new ImageIcon(getClass().getResource("/images/save.png"));
+		update = new ImageIcon(getClass().getResource("/images/update.png"));
 		
 		
 		

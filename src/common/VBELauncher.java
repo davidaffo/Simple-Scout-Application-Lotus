@@ -32,9 +32,12 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 import java.awt.Component;
+import java.awt.Desktop;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ResourceBundle;
 import javax.swing.JLabel;
 
@@ -48,6 +51,7 @@ public class VBELauncher extends JFrame {
 	private VBELauncher thisWindow = this;
 	private JMenuItem languageMenu;
 	private JLabel version;
+	private JButton update;
 
 	/**
 	 * Launch the application.
@@ -72,6 +76,7 @@ public class VBELauncher extends JFrame {
 		LotusVBE.lang = language;
 		this.languageMenu.setText(LotusVBE.lang.getString("language")+": "+LotusVBE.lang.getString("thisLanguage"));
 		this.version.setText(LotusVBE.lang.getString("version")+LotusVBE.version);
+		this.update.setText(LotusVBE.lang.getString("checkVersion"));
 		Language.rememberLanguage(LotusVBE.lang.getBaseBundleName());
 	}
 
@@ -112,9 +117,6 @@ public class VBELauncher extends JFrame {
 		});
 		menuBar.add(languageMenu);
 		
-		version = new JLabel(LotusVBE.lang.getString("version")+LotusVBE.version);
-		menuBar.add(version);
-		
 		JButton btnCredits = new JButton("Credits");
 		btnCredits.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -151,9 +153,9 @@ public class VBELauncher extends JFrame {
 				thisWindow.dispose();
 			}
 		});
-		contentPane.setLayout(new MigLayout("", "[424px,grow,fill]", "[100px,grow,fill][100.00px,grow,fill][100px,grow,fill]"));
-		contentPane.add(ssa, "cell 0 0,grow");
-		contentPane.add(analyzer, "cell 0 1,grow");
+		contentPane.setLayout(new MigLayout("", "[212px,grow,fill][212px,grow,fill]", "[100px,grow,fill][100.00px,grow,fill][100px,grow,fill][44.00,fill]"));
+		contentPane.add(ssa, "cell 0 0 2 1,grow");
+		contentPane.add(analyzer, "cell 0 1 2 1,grow");
 		
 		JButton dataModder = new JButton("Lotus Data Modder");
 		dataModder.setHorizontalTextPosition(SwingConstants.LEFT);
@@ -163,12 +165,38 @@ public class VBELauncher extends JFrame {
 				thisWindow.dispose();
 			}
 		});
-		contentPane.add(dataModder, "cell 0 2,grow");
+		contentPane.add(dataModder, "cell 0 2 2 1,grow");
+		
+		update = new JButton(LotusVBE.lang.getString("checkVersion"));
+		update.setHorizontalTextPosition(SwingConstants.LEFT);
+		update.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (Desktop.isDesktopSupported()) {
+				    try {
+						Desktop.getDesktop().browse(new URI("https://github.com/davidaffo/Simple-Scout-Application-Lotus/releases"));
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					} catch (URISyntaxException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+			}
+		});
+		contentPane.add(update, "cell 1 3,grow");
+		
 		pack();
 		int side = ssa.getHeight();
 		ssa.setIcon(new ImageIcon(LotusVBE.img.lotusIcon.getImage().getScaledInstance(side-10, side-10, Image.SCALE_SMOOTH)));
 		analyzer.setIcon(new ImageIcon(LotusVBE.img.analyzer.getImage().getScaledInstance(side-10, side-10, Image.SCALE_SMOOTH)));
 		dataModder.setIcon(new ImageIcon(LotusVBE.img.dataModder.getImage().getScaledInstance(side-10, side-10, Image.SCALE_SMOOTH)));
+
+		update.setIcon(new ImageIcon(LotusVBE.img.update.getImage().getScaledInstance(update.getHeight()-10, update.getHeight()-10, Image.SCALE_SMOOTH)));
+		
+		version = new JLabel(LotusVBE.lang.getString("version")+LotusVBE.version);
+		contentPane.add(version, "flowy,cell 0 3,grow");
+		
 
 	}
 	private static void addPopup(Component component, final JPopupMenu popup) {
