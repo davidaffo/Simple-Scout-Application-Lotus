@@ -98,7 +98,7 @@ public class Output {
 		if (!testmode) {
 			File backupFile = new File(Constants.BACKUP_PATH);
 			try {
-				Files.move(backupFile.toPath(), new File(System.getProperty("user.dir") + "/" + fileNameNo + "/" + "game.lotusgame").toPath(), REPLACE_EXISTING);
+				Files.move(backupFile.toPath(), new File(Constants.ROOT+fileNameNo + File.separator + "game.lotusgame").toPath(), REPLACE_EXISTING);
 			} catch (IOException e) {
 				LotusVBE.printError(w, LotusVBE.lang.getString("gameNotFound"));
 			}

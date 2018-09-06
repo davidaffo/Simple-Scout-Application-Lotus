@@ -358,7 +358,7 @@ public class SetupController{
 	public void newTeam() {
 		String team = JOptionPane.showInputDialog(lang.getString("newTeam"));
         if (team != null) {
-            File newTeam = new File(System.getProperty("user.dir") + "/LotusData/Teams/" + team + ".lotus");
+            File newTeam = new File(Constants.LOTUSDATA+"Teams"+File.separator + team + ".lotus");
             try {
                 newTeam.createNewFile();
             } catch (IOException ex) {
@@ -387,10 +387,10 @@ public class SetupController{
 
 
 	public void renameTeam() {
-		File oldTeam = new File(System.getProperty("user.dir") + "/LotusData/Teams/" + w.teamList.getSelectedValue());
+		File oldTeam = new File(Constants.LOTUSDATA+"Teams"+File.separator + w.teamList.getSelectedValue());
         String newName = JOptionPane.showInputDialog(lang.getString("renameMessage"));
         if (newName != null) { //se ho inserito qualcosa e dato ok
-            File newTeam = new File(System.getProperty("user.dir") + "/LotusData/Teams/" + newName + ".lotus");
+            File newTeam = new File(Constants.LOTUSDATA+"Teams"+File.separator + newName + ".lotus");
 
             if (newTeam.exists()) {//se c'era già un file con quel nome
                 JOptionPane.showMessageDialog(w, lang.getString("teamAlreadyExists"));
@@ -406,12 +406,12 @@ public class SetupController{
 	
 
 	public void copyTeam() {
-		File srcFile = new File(System.getProperty("user.dir") + "/LotusData/Teams/" + w.teamList.getSelectedValue());
-        File outFile = new File(System.getProperty("user.dir") + "/LotusData/Teams/" + w.teamList.getSelectedValue());
+		File srcFile = new File(Constants.LOTUSDATA+"Teams"+File.separator + w.teamList.getSelectedValue());
+        File outFile = new File(Constants.LOTUSDATA+"Teams"+File.separator + w.teamList.getSelectedValue());
         int i=0;
 		while(outFile.exists()){
 			i++;
-			outFile = new File(System.getProperty("user.dir") + "/LotusData/Teams/" +"copy_"+i+"_"+ w.teamList.getSelectedValue());
+			outFile = new File(Constants.LOTUSDATA+"Teams"+File.separator+"copy_"+i+"_"+ w.teamList.getSelectedValue());
 		}
             try {
 				Files.copy(srcFile.toPath(), outFile.toPath());

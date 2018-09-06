@@ -17,11 +17,13 @@ package common;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
+import java.net.URISyntaxException;
 import java.util.regex.Pattern;
 
 public class Constants {
@@ -43,10 +45,21 @@ public class Constants {
 	//skillRef = new Skill[]{serve,receive,bothAttacks,attackSO,attackBP,block,dig};
 
 	//path
-	public static final String ROOT = System.getProperty("user.dir")+"/";
-	public static final String LOTUSDATA = ROOT + "LotusData/";
-	public static final String GAMES_PATH = ROOT + "Games";
-	public static final String BACKUP_PATH = ROOT + "gameData.lotusgame";
+	public static String ROOT; 
+	public static String LOTUSDATA;
+	public static String GAMES_PATH;
+	public static String BACKUP_PATH;
+	
+	public static void createPaths() {
+		try {
+			ROOT = new File(VBELauncher.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getPath()+File.separator;
+			LOTUSDATA = ROOT + "LotusData"+File.separator;
+			GAMES_PATH = ROOT + "Games";
+			BACKUP_PATH = ROOT + "gameData.lotusgame";
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+		}
+	}
 
 	public static boolean validateMail(String emailStr) {
 		if(emailStr==null)

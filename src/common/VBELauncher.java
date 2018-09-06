@@ -57,6 +57,7 @@ public class VBELauncher extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		Constants.createPaths();
 		LotusVBE.createEnvironment();
 		Language.setupActualLanguage();
 		LotusVBE.img = new Images();

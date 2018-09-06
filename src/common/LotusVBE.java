@@ -31,7 +31,7 @@ public class LotusVBE {
 	public static Images img;
 
 	//other
-	public final static String version = "1.0.1";
+	public final static String version = "1.0.2";
 	
 	static void startSSA(){
 		ssa.SSALotus instance = new ssa.SSALotus();
@@ -55,7 +55,7 @@ public class LotusVBE {
 	public static void createEnvironment(){ //creates necessary directories if they are not found
 		new File(Constants.ROOT+"Games").mkdirs();
 		new File(Constants.ROOT+"LotusData").mkdirs();
-		new File(Constants.ROOT+"LotusData/Teams").mkdirs();
+		new File(Constants.ROOT+"LotusData"+File.separator+"Teams").mkdirs();
 	}
 	
 

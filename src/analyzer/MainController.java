@@ -100,7 +100,7 @@ public class MainController {
 				else
 					path=path.replaceAll(",", File.separator);
 
-				f = new File(System.getProperty("user.dir")+"\\\\"+path);
+				f = new File(Constants.ROOT+path);
 
 
 				if(f.isDirectory()){

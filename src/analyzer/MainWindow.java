@@ -294,7 +294,7 @@ public class MainWindow extends JFrame {
 		digPerfBar.setStringPainted(true);
 		contentPane.add(digPerfBar, "cell 4 7,grow");
 
-		File fileRoot = new File(System.getProperty("user.dir") + "/Games");
+		File fileRoot = new File(Constants.ROOT + "Games");
 		DefaultMutableTreeNode root = new DefaultMutableTreeNode(new FileNode(fileRoot));
 		DefaultTreeModel treeModel = new DefaultTreeModel(root);
 		tree = new JTree(treeModel);
