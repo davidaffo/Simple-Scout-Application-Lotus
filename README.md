@@ -2,7 +2,7 @@ https://github.com/davidaffo/Simple-Scout-Application-Lotus.git
 # Simple Scout Application Lotus
 
 ## English
-Open source scouting application for volleyball. Powerful, simple and totally free to use! Designed for Windows.
+Open source scouting application for volleyball. Powerful, simple and totally free to use! Designed for Windows and Linux.
 See manual for description and start scouting!
 
 ### - Download:
@@ -21,7 +21,7 @@ If you like my work, consider making a donation, I will be extremely grateful!
 
 
 ## Italiano
-Programma open source per rilevare gli scout di pallavolo. Potente, semplice e completamente gratuito! Designato per Windows.
+Programma open source per rilevare gli scout di pallavolo. Potente, semplice e completamente gratuito! Designato per Windows e Linux.
 Leggi il manuale per le istruzioni e comincia!
 
 ### - Download:
