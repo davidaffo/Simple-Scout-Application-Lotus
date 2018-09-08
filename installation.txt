@@ -1,0 +1,3 @@
+Copy the files inside this directory to your SSA Lotus installation folder
+
+Copia i file all'interno di questa cartella nella cartella d'installazione di SSA Lotus.

@@ -31,7 +31,7 @@ public class LotusVBE {
 	public static Images img;
 
 	//other
-	public final static String version = "1.0.2";
+	public final static String version = "v1.1.0"; //always respect this format to check updates correctly
 	
 	static void startSSA(){
 		ssa.SSALotus instance = new ssa.SSALotus();
@@ -132,7 +132,7 @@ public class LotusVBE {
 	}
 	
 	public static void printError(Component parentComponent,String s){
-		JOptionPane.showMessageDialog(parentComponent, s);
+		JOptionPane.showMessageDialog(parentComponent, s, "Unexpected Error", JOptionPane.ERROR_MESSAGE);
 	}
 
 }

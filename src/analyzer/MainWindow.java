@@ -50,6 +50,8 @@ import javax.swing.JInternalFrame;
 import java.awt.Dimension;
 import java.awt.Image;
 import javax.swing.border.LineBorder;
+import java.awt.event.WindowStateListener;
+import java.awt.event.WindowEvent;
 
 public class MainWindow extends JFrame {
 
@@ -93,6 +95,11 @@ public class MainWindow extends JFrame {
 	 * Create the frame.
 	 */
 	public MainWindow(MainController c) {
+		addWindowStateListener(new WindowStateListener() {
+			public void windowStateChanged(WindowEvent arg0) {
+				pack();
+			}
+		});
 		this.setIconImage(LotusVBE.img.lotusLogo);
 		UIManager.put("ProgressBar.selectionForeground", Color.black);
 		UIManager.put("ProgressBar.selectionBackground", Color.black);
@@ -104,7 +111,7 @@ public class MainWindow extends JFrame {
 		contentPane.setMaximumSize(new Dimension(552, 104));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new MigLayout("", "[112.00,grow][220.00,grow,fill][220.00,grow,fill][220,grow,center][220.00,grow,fill][110,grow,fill][110,grow,fill]", "[26,grow][26,grow][26.00,grow][26,grow][grow][25px,grow,center][25,grow,center][25,grow,center][312.00,grow]"));
+		contentPane.setLayout(new MigLayout("", "[112.00,grow][220.00,fill][220.00,fill][110,center][110,center][220.00,fill][110,fill][110,fill]", "[26,grow][26,grow][26.00,grow][26,grow][grow][25px,grow,center][25,grow,center][25,grow,center][312.00]"));
 
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setMaximumSize(new Dimension(512, 104));
@@ -124,20 +131,20 @@ public class MainWindow extends JFrame {
 						c.loadButton();
 					}
 				});
-				contentPane.add(loadButton, "cell 3 0,growx");
+				contentPane.add(loadButton, "cell 3 0 2 1,growx");
 
 		gameListArea = new JTextArea();
 		gameListArea.setBorder(new LineBorder(new Color(0, 0, 0)));
 		gameListArea.setEditable(false);
 		gameListArea.setLineWrap(true);
-		contentPane.add(gameListArea, "cell 4 0 2 4,grow");
+		contentPane.add(gameListArea, "cell 5 0 2 4,grow");
 
 
 
 		statusArea = new JTextArea();
 		statusArea.setBorder(new LineBorder(new Color(0, 0, 0)));
 		statusArea.setEditable(false);
-		contentPane.add(statusArea, "cell 6 0 1 4,grow");
+		contentPane.add(statusArea, "cell 7 0 1 4,grow");
 		
 				exportButton = new JButton(lang.getString("exportDataButton"));
 				exportButton.addActionListener(new ActionListener() {
@@ -146,7 +153,7 @@ public class MainWindow extends JFrame {
 					}
 				});
 				exportButton.setEnabled(false);
-				contentPane.add(exportButton, "cell 3 1,growx");
+				contentPane.add(exportButton, "cell 3 1 2 1,growx");
 		
 				oneOutButton = new JButton(lang.getString("singlePlayerButton"));
 				oneOutButton.addActionListener(new ActionListener() {
@@ -155,7 +162,7 @@ public class MainWindow extends JFrame {
 					}
 				});
 				oneOutButton.setEnabled(false);
-				contentPane.add(oneOutButton, "cell 3 2,growx");
+				contentPane.add(oneOutButton, "cell 3 2 2 1,growx");
 
 		JLabel lblNewLabel = new JLabel(lang.getString("skill"));
 		contentPane.add(lblNewLabel, "cell 0 4,alignx center,growy");
@@ -185,7 +192,7 @@ public class MainWindow extends JFrame {
 			}
 		});
 		attackButton.setEnabled(false);
-		contentPane.add(attackButton, "cell 3 4,grow");
+		contentPane.add(attackButton, "cell 3 4 2 1,grow");
 
 		digButton = new JButton(lang.getString("dig"));
 		digButton.addActionListener(new ActionListener() {
@@ -194,7 +201,7 @@ public class MainWindow extends JFrame {
 			}
 		});
 		digButton.setEnabled(false);
-		contentPane.add(digButton, "cell 4 4,grow");
+		contentPane.add(digButton, "cell 5 4,grow");
 
 		blockButton = new JButton(lang.getString("block"));
 		blockButton.addActionListener(new ActionListener() {
@@ -203,7 +210,7 @@ public class MainWindow extends JFrame {
 			}
 		});
 		blockButton.setEnabled(false);
-		contentPane.add(blockButton, "cell 5 4 2 1,grow");
+		contentPane.add(blockButton, "cell 6 4 2 1,grow");
 
 		JLabel lblNewLabel_1 = new JLabel(lang.getString("efficiency"));
 		contentPane.add(lblNewLabel_1, "cell 0 5,alignx center,growy");
@@ -227,21 +234,21 @@ public class MainWindow extends JFrame {
 		attackEffBar.setMaximum(200);
 		attackEffBar.setValue(-100);
 		attackEffBar.setStringPainted(true);
-		contentPane.add(attackEffBar, "cell 3 5,grow");
+		contentPane.add(attackEffBar, "cell 3 5 2 1,grow");
 
 		digEffBar = new JProgressBar();
 		digEffBar.setForeground(new Color(0, 153, 51));
 		digEffBar.setMaximum(200);
 		digEffBar.setValue(-100);
 		digEffBar.setStringPainted(true);
-		contentPane.add(digEffBar, "cell 4 5,grow");
+		contentPane.add(digEffBar, "cell 5 5,grow");
 
 		blockEffBar = new JProgressBar();
 		blockEffBar.setForeground(new Color(0, 153, 51));
 		blockEffBar.setMaximum(200);
 		blockEffBar.setValue(-100);
 		blockEffBar.setStringPainted(true);
-		contentPane.add(blockEffBar, "cell 5 5 2 1,grow");
+		contentPane.add(blockEffBar, "cell 6 5 2 1,grow");
 
 		JLabel lblNewLabel_2 = new JLabel(lang.getString("positivity"));
 		contentPane.add(lblNewLabel_2, "cell 0 6,alignx center,growy");
@@ -259,17 +266,17 @@ public class MainWindow extends JFrame {
 		attackPosBar = new JProgressBar();
 		attackPosBar.setForeground(new Color(0, 153, 51));
 		attackPosBar.setStringPainted(true);
-		contentPane.add(attackPosBar, "cell 3 6,grow");
+		contentPane.add(attackPosBar, "cell 3 6 2 1,grow");
 
 		digPosBar = new JProgressBar();
 		digPosBar.setForeground(new Color(0, 153, 51));
 		digPosBar.setStringPainted(true);
-		contentPane.add(digPosBar, "cell 4 6,grow");
+		contentPane.add(digPosBar, "cell 5 6,grow");
 
 		blockPosBar = new JProgressBar();
 		blockPosBar.setForeground(new Color(0, 153, 51));
 		blockPosBar.setStringPainted(true);
-		contentPane.add(blockPosBar, "cell 5 6 2 1,grow");
+		contentPane.add(blockPosBar, "cell 6 6 2 1,grow");
 
 		JLabel lblNewLabel_3 = new JLabel(lang.getString("perfection"));
 		contentPane.add(lblNewLabel_3, "cell 0 7,alignx center,growy");
@@ -287,12 +294,12 @@ public class MainWindow extends JFrame {
 		attackPerfBar = new JProgressBar();
 		attackPerfBar.setForeground(new Color(0, 153, 51));
 		attackPerfBar.setStringPainted(true);
-		contentPane.add(attackPerfBar, "cell 3 7,grow");
+		contentPane.add(attackPerfBar, "cell 3 7 2 1,grow");
 
 		digPerfBar = new JProgressBar();
 		digPerfBar.setForeground(new Color(0, 153, 51));
 		digPerfBar.setStringPainted(true);
-		contentPane.add(digPerfBar, "cell 4 7,grow");
+		contentPane.add(digPerfBar, "cell 5 7,grow");
 
 		File fileRoot = new File(Constants.ROOT + "Games");
 		DefaultMutableTreeNode root = new DefaultMutableTreeNode(new FileNode(fileRoot));
@@ -318,7 +325,7 @@ public class MainWindow extends JFrame {
 		blockPerfBar = new JProgressBar();
 		blockPerfBar.setForeground(new Color(0, 153, 51));
 		blockPerfBar.setStringPainted(true);
-		contentPane.add(blockPerfBar, "cell 5 7 2 1,grow");
+		contentPane.add(blockPerfBar, "cell 6 7 2 1,grow");
 
 		//hash creation
 		levelBars.put(new Pair(Constants.SERVE,Skill.EFFICIENCY), serveEffBar);
@@ -342,13 +349,16 @@ public class MainWindow extends JFrame {
 		levelBars.put(new Pair(Constants.BLOCK,Skill.PERFECTION), blockPerfBar);
 		
 		pieDone = new JInternalFrame(lang.getString("donePoints"));
-		pieDone.setMaximumSize(new Dimension(440, 312));
-		contentPane.add(pieDone, "cell 1 8 2 1,grow");
+		pieDone.setPreferredSize(new Dimension(550, 312));
+		contentPane.add(pieDone, "cell 1 8 3 1,grow");
+		pieDone.pack();
 		pieDone.setVisible(true);
 		
 		pieSub = new JInternalFrame(lang.getString("sufferedPoints"));
-		pieSub.setMaximumSize(new Dimension(440, 312));
-		contentPane.add(pieSub, "cell 4 8 3 1,grow");
+		pieSub.setPreferredSize(new Dimension(550, 312));
+		contentPane.add(pieSub, "cell 4 8 4 1,grow");
+		pieSub.pack();
+		pieSub.setVisible(true);
 		pack();
 		int side=serveButton.getHeight();
 		serveButton.setIcon(new ImageIcon(LotusVBE.img.serve.getImage().getScaledInstance(side-10, side-10, Image.SCALE_SMOOTH)));
@@ -360,7 +370,6 @@ public class MainWindow extends JFrame {
 		loadButton.setIcon(new ImageIcon(LotusVBE.img.upload.getImage().getScaledInstance(side-10, side-10, Image.SCALE_SMOOTH)));
 		exportButton.setIcon(new ImageIcon(LotusVBE.img.export.getImage().getScaledInstance(side-10, side-10, Image.SCALE_SMOOTH)));
 		oneOutButton.setIcon(new ImageIcon(LotusVBE.img.sheet.getImage().getScaledInstance(side-10, side-10, Image.SCALE_SMOOTH)));
-		pieSub.setVisible(true);
 	}
 
 	public class CreateChildNodes implements Runnable {

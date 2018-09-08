@@ -30,7 +30,7 @@ public class Language {
 		public static void setupActualLanguage(){
 			String l="languages/Language_en_US"; //default language
 			try {
-				l = LotusVBE.readFile(Constants.ROOT+"/actualLanguage.ini");
+				l = LotusVBE.readFile(Constants.ROOT+"actualLanguage.ini");
 			} catch (IOException e) {
 				//reset file and load default language
 				rememberLanguage(l);
@@ -42,7 +42,7 @@ public class Language {
 		}
 		
 		public static void rememberLanguage(String l){
-			File output = new File(Constants.ROOT+"/actualLanguage.ini");
+			File output = new File(Constants.ROOT+"actualLanguage.ini");
 			try {
 				output.createNewFile();
 			} catch (IOException e1) {

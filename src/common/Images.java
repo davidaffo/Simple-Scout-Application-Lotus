@@ -54,6 +54,9 @@ public class Images {
 	public ImageIcon preview;
 	public ImageIcon save;
 	public ImageIcon update;
+	public ImageIcon support;
+	public ImageIcon usa;
+	public ImageIcon italy;
 	
 	public Images (){
 		lotusIcon  = new ImageIcon(getClass().getResource("/images/lotus.png"));
@@ -89,6 +92,9 @@ public class Images {
 		preview = new ImageIcon(getClass().getResource("/images/preview.png"));
 		save = new ImageIcon(getClass().getResource("/images/save.png"));
 		update = new ImageIcon(getClass().getResource("/images/update.png"));
+		support = new ImageIcon(getClass().getResource("/images/like.png"));
+		usa = new ImageIcon(getClass().getResource("/images/united-states.png"));
+		italy = new ImageIcon(getClass().getResource("/images/italy.png"));
 		
 		
 		

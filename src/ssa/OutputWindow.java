@@ -73,7 +73,7 @@ public class OutputWindow extends javax.swing.JFrame {
 
 
 
-		this.setPreferredSize(new Dimension(505,331));
+		this.setPreferredSize(new Dimension(560,331));
 
 
 		jLabel1 = new javax.swing.JLabel();
@@ -157,7 +157,7 @@ public class OutputWindow extends javax.swing.JFrame {
 
 
 		this.setIconImage(LotusVBE.img.lotusLogo);
-		getContentPane().setLayout(new MigLayout("", "[182.00,grow][121.00,grow][84.00,grow][76.00,grow]", "[20px][20px][20px][20px][20px][20px][20px][50px][56px]"));
+		getContentPane().setLayout(new MigLayout("", "[182.00,grow][121.00,grow][84.00,grow][76.00,grow]", "[20px,grow][20px,grow][20px,grow][20px,grow][20px,grow][20px,grow][20px,grow][50px,grow][56px,grow]"));
 		getContentPane().add(datePicker, "cell 1 2 3 1,growx");
 		getContentPane().add(notify, "cell 0 6 4 1,growx,aligny top");
 		getContentPane().add(pb, "cell 0 8 4 1,grow");
@@ -180,10 +180,12 @@ public class OutputWindow extends javax.swing.JFrame {
 		getContentPane().add(homeResult, "cell 3 3,growx,aligny top");
 		
 		pack();
+		int side = backButton.getHeight()-10;
 		
-		backButton.setIcon(new ImageIcon(LotusVBE.img.undo.getImage().getScaledInstance(backButton.getHeight()-10, backButton.getHeight()-10, Image.SCALE_SMOOTH)));
-		previewButton.setIcon(new ImageIcon(LotusVBE.img.preview.getImage().getScaledInstance(backButton.getHeight()-10, backButton.getHeight()-10, Image.SCALE_SMOOTH)));
-		endButton.setIcon(new ImageIcon(LotusVBE.img.save.getImage().getScaledInstance(backButton.getHeight()-10, backButton.getHeight()-10, Image.SCALE_SMOOTH)));
+		backButton.setIcon(new ImageIcon(LotusVBE.img.undo.getImage().getScaledInstance(side, side, Image.SCALE_SMOOTH)));
+		previewButton.setIcon(new ImageIcon(LotusVBE.img.preview.getImage().getScaledInstance(side, side, Image.SCALE_SMOOTH)));
+		endButton.setIcon(new ImageIcon(LotusVBE.img.save.getImage().getScaledInstance(side, side, Image.SCALE_SMOOTH)));
+
 	}
 
 	private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
