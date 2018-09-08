@@ -6,7 +6,7 @@ Open source scouting application for volleyball. Powerful, simple and totally fr
 See manual for description and start scouting!
 
 ### - Download:
-Download the latest release version from here https://github.com/davidaffo/Simple-Scout-Application-Lotus/releases.
+Download the latest release version from here https://github.com/davidaffo/Simple-Scout-Application-Lotus/releases/latest.
 
 ### - Installing:
 Just extract the folder inside the zip file where you want and get started!
@@ -25,7 +25,7 @@ Programma open source per rilevare gli scout di pallavolo. Potente, semplice e c
 Leggi il manuale per le istruzioni e comincia!
 
 ### - Download:
-Scarica l'ultima versione rilasciata da qui https://github.com/davidaffo/Simple-Scout-Application-Lotus/releases.
+Scarica l'ultima versione rilasciata da qui https://github.com/davidaffo/Simple-Scout-Application-Lotus/releases/latest.
 
 ### - Installazione:
 Estrai la cartella dove preferisci e comincia!
