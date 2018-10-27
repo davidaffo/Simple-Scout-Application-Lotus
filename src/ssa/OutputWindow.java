@@ -180,6 +180,7 @@ public class OutputWindow extends javax.swing.JFrame {
 		getContentPane().add(homeResult, "cell 3 3,growx,aligny top");
 		
 		pack();
+		setLocationRelativeTo(null); //window to center
 		int side = backButton.getHeight()-10;
 		
 		backButton.setIcon(new ImageIcon(LotusVBE.img.undo.getImage().getScaledInstance(side, side, Image.SCALE_SMOOTH)));

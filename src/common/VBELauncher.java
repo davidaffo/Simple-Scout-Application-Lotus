@@ -245,6 +245,7 @@ public class VBELauncher extends JFrame {
 		contentPane.add(update, "cell 1 3,grow");
 		
 		pack();
+		setLocationRelativeTo(null); //window to center
 		int side = ssa.getHeight();
 		ssa.setIcon(new ImageIcon(LotusVBE.img.lotusIcon.getImage().getScaledInstance(side-10, side-10, Image.SCALE_SMOOTH)));
 		analyzer.setIcon(new ImageIcon(LotusVBE.img.analyzer.getImage().getScaledInstance(side-10, side-10, Image.SCALE_SMOOTH)));

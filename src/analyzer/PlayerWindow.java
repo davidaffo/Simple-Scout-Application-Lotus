@@ -284,6 +284,7 @@ public class PlayerWindow extends JFrame {
 		contentPane.add(blockPerfBar, "cell 2 8,grow");
 		levelBars.put(new Pair(Constants.BLOCK,Skill.PERFECTION), blockPerfBar);
 		pack();
+		setLocationRelativeTo(null); //window to center
 		int side=serveButton.getHeight();
 		serveButton.setIcon(new ImageIcon(LotusVBE.img.serve.getImage().getScaledInstance(side-10, side-10, Image.SCALE_SMOOTH)));
 		receiveButton.setIcon(new ImageIcon(LotusVBE.img.receive.getImage().getScaledInstance(side-10, side-10, Image.SCALE_SMOOTH)));

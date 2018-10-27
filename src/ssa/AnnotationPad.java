@@ -134,6 +134,7 @@ public class AnnotationPad extends javax.swing.JFrame {
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {escButton, saveButton});
 
         pack();
+        setLocationRelativeTo(null); //window to center
     }// </editor-fold>//GEN-END:initComponents
 
     private void escButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_escButtonActionPerformed

@@ -520,6 +520,7 @@ public class MainWindow extends javax.swing.JFrame{
 		getContentPane().add(subAttackField, "cell 6 15,grow");
 		subAttackField.setColumns(10);
 		pack();
+		setLocationRelativeTo(null); //window to center
 		setSize(new Dimension(669, 464));
 		
 

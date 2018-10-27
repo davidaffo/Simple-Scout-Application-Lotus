@@ -98,6 +98,7 @@ public class MainWindow extends JFrame {
 		addWindowStateListener(new WindowStateListener() {
 			public void windowStateChanged(WindowEvent arg0) {
 				pack();
+				setLocationRelativeTo(null); //window to center
 			}
 		});
 		this.setIconImage(LotusVBE.img.lotusLogo);

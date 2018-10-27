@@ -762,6 +762,7 @@ public class SetupWindow extends javax.swing.JFrame {
                         getContentPane().add(integrityStatus, "cell 0 18 7 1,growx,aligny top");
 
         pack();
+        setLocationRelativeTo(null); //window to center
     
     	this.setPreferredSize(new Dimension(906,579));
     	getSearch().getDocument().addDocumentListener(new DocumentListener() {

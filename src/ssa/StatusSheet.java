@@ -91,6 +91,7 @@ public class StatusSheet extends javax.swing.JFrame {
 		getContentPane().add(jScrollPane1, "cell 0 0,grow");
 
 		pack();
+		setLocationRelativeTo(null); //window to center
 	}// </editor-fold>//GEN-END:initComponents
 
 	private void statusAreaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_statusAreaKeyPressed

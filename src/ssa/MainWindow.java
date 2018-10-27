@@ -992,6 +992,7 @@ public class MainWindow extends javax.swing.JFrame {
         menuDone.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         menuBar.add(menuDone);
         pack();
+        setLocationRelativeTo(null); //window to center
         
         //images
         int side = mainSectorServe.getHeight()-30;

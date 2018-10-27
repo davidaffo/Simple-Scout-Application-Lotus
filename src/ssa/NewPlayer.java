@@ -147,6 +147,7 @@ public class NewPlayer extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null); //window to center
     }// </editor-fold>//GEN-END:initComponents
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
