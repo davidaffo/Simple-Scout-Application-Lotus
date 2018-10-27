@@ -394,7 +394,7 @@ public class SetupWindow extends javax.swing.JFrame {
         jLabel4.setText("Nickname:");
         jLabel4.setFocusable(false);
 
-        jLabel6.setText("N°:");
+        jLabel6.setText("N:");
         jLabel6.setFocusable(false);
 
         //remove1.setText(lang.getString("removePlayer"));
