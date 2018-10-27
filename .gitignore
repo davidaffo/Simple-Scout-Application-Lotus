@@ -1,8 +1,8 @@
-LotusData/*
-Games/*
-releaseVersion/*
-actualLanguage.ini
-Notes.txt
+/LotusData/*
+/Games/*
+/releaseVersion/*
+/actualLanguage.ini
+/Notes.txt
 *.lotusgame
 .git
 .classpath
