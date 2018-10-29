@@ -175,8 +175,10 @@ public class Game implements Serializable{ //includes all stored data of a game
 			objIn.close();
 			backupIn.close();
 			return game;
-		} catch (ClassNotFoundException | IOException e) {
+		} catch (IOException e) {
 			LotusVBE.printError(null, lang.getString("gameNotFound"));
+		} catch (ClassNotFoundException e) {
+			LotusVBE.printError(null, lang.getString("gameDataCorrupted"));
 		}
 		return null;
 	}

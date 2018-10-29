@@ -57,8 +57,7 @@ public class SSALotus {
 
 		}
 		
-		if (backupActivated) { //i want to load the game from the serilialized backup file
-			game = Game.loadFromFile(BACKUP_PATH);
+		if (backupActivated && (game = Game.loadFromFile(BACKUP_PATH))!=null) { //i want to load the game from the serilialized backup file
 			main.buildWindow(game);
 			
 		} else {
