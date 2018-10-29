@@ -27,6 +27,8 @@ import javax.swing.JOptionPane;
 
 import common.LotusVBE;
 import database.DB;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 /**
  *
@@ -73,10 +75,31 @@ public class NewPlayer extends javax.swing.JFrame {
 
         jLabel9 = new javax.swing.JLabel();
         id = new javax.swing.JTextField();
+        id.addKeyListener(new KeyAdapter() {
+        	@Override
+        	public void keyPressed(KeyEvent e) {
+        		if(e.getKeyCode() == KeyEvent.VK_ENTER)
+        			save.doClick();
+        	}
+        });
         jLabel10 = new javax.swing.JLabel();
         lastname = new javax.swing.JTextField();
+        lastname.addKeyListener(new KeyAdapter() {
+        	@Override
+        	public void keyPressed(KeyEvent e) {
+        		if(e.getKeyCode() == KeyEvent.VK_ENTER)
+        			save.doClick();
+        	}
+        });
         jLabel11 = new javax.swing.JLabel();
         name = new javax.swing.JTextField();
+        name.addKeyListener(new KeyAdapter() {
+        	@Override
+        	public void keyPressed(KeyEvent e) {
+        		if(e.getKeyCode() == KeyEvent.VK_ENTER)
+        			save.doClick();
+        	}
+        });
         save = new javax.swing.JButton();
         cancel = new javax.swing.JButton();
 
@@ -156,6 +179,7 @@ public class NewPlayer extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelActionPerformed
 
     private void saveActionPerformed(java.awt.event.ActionEvent evt) throws FileNotFoundException {
+    	
     	String id=this.id.getText();
     	String name=this.name.getText();
     	String lastname=this.lastname.getText();
@@ -176,10 +200,11 @@ public class NewPlayer extends javax.swing.JFrame {
 
             }
 
-        }
+        
         c.w.setEnabled(true);
         c.updatePlayerList();
         this.dispose();
+        }
     }
 
 

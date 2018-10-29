@@ -135,7 +135,7 @@ public class DB implements Serializable{
 	
 	public int getRecordIndex(String id){
 		for(int i=0;i<records.size();i++){
-			if(records.get(i).getId()==id)
+			if(records.get(i).getId().equals(id))
 				return i;
 		}
 		return -1;
