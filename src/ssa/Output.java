@@ -117,7 +117,7 @@ public class Output {
 				"<p>"+"Date: "+game.date.get(Calendar.YEAR)+"/"+(game.date.get(Calendar.MONTH)+1)+"/"+game.date.get(Calendar.DAY_OF_MONTH)+"</p>"
 				+"<p>"+"MVP: "+game.mvp+"</p>"
 				+"<p>Scout-Man: "+game.scoutName+"</p><p>"+" Assistants: "+game.assistName+"</p>"
-				+"<p>Performed by SSA Lotus v"+LotusVBE.version+" &#9400; 2018 Davide Daffonchio All Rights Reserved"+"</p>"
+				+"<p>Performed by SSA Lotus "+LotusVBE.version+" &#9400; 2018 Davide Daffonchio All Rights Reserved"+"</p>"
 				,game.homeTeam+" - "+game.guestTeam+" "+game.homeResult+" - "+game.guestResult,false));
 		writer.close();
 		//printing email list

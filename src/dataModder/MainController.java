@@ -210,7 +210,7 @@ public class MainController {
 				"<p>"+"Date: "+game.printDate()+"</p>"
 						+"<p>"+"MVP: "+game.mvp+"</p>"
 						+"<p>Scout-Man: "+game.scoutName+"</p><p>"+" Assistants: "+game.assistName+"</p>"
-						+"<p>Performed by SSA Lotus v"+LotusVBE.version+" &#9400; 2018 Daffonchio Davide All Rights Reserved"+"</p>"
+						+"<p>Performed by SSA Lotus "+LotusVBE.version+" &#9400; 2018 Daffonchio Davide All Rights Reserved"+"</p>"
 						,game.homeTeam+" - "+game.guestTeam+" "+game.homeResult+" - "+game.guestResult,false));
 		w.progress.setValue(90);
 		writer.close();

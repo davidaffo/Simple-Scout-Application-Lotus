@@ -332,7 +332,7 @@ public class MainController {
 			lang.getString("fileNotFoundModder");
 			e.printStackTrace();
 		}
-		writer.println(finalGame.printGame("<p>Performed by SSA Lotus Analyzer v"+LotusVBE.version+" &#9400; 2018 Davide Daffonchio All Rights Reserved"+"</p>","",true));
+		writer.println(finalGame.printGame("<p>Performed by SSA Lotus Analyzer "+LotusVBE.version+" &#9400; 2018 Davide Daffonchio All Rights Reserved"+"</p>","",true));
 		writer.close();
 
 		JOptionPane.showMessageDialog(w, lang.getString("dataExported")+fileName);

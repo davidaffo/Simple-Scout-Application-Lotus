@@ -34,6 +34,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.event.ListSelectionEvent;
 
+import org.apache.commons.io.FilenameUtils;
+
 import common.Constants;
 import common.LotusVBE;
 import data.Game;
@@ -388,7 +390,7 @@ public class SetupController{
 
 	public void renameTeam() {
 		File oldTeam = new File(Constants.LOTUSDATA+"Teams"+File.separator + w.teamList.getSelectedValue());
-        String newName = JOptionPane.showInputDialog(lang.getString("renameMessage"));
+        String newName = JOptionPane.showInputDialog(lang.getString("renameMessage"), FilenameUtils.removeExtension(oldTeam.getName()));
         if (newName != null) { //se ho inserito qualcosa e dato ok
             File newTeam = new File(Constants.LOTUSDATA+"Teams"+File.separator + newName + ".lotus");
 
