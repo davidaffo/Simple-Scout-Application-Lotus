@@ -157,7 +157,7 @@ public class Skill implements Serializable{
 			return 0;
 		if(this.name.equals("dig"))
 			return ((float)(getPositiveShot()-getMark(0)-getMark(1))/(float)getTotal())*100;
-		if(this.name.equals("serve") || this.name.equals("receive"))
+		if(this.name.equals("serve") || this.name.equals("receive") || this.name.equals("block"))
 			return ((float)(getPositiveShot()-getMark(0))/(float)getTotal())*100;		
 		return ((float)(getMark(marks.length-1)-getMark(0))/(float)getTotal())*100;
 	}
