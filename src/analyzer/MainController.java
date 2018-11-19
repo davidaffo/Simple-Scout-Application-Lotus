@@ -316,7 +316,7 @@ public class MainController {
 
 		//files creation index and main directory
 		Calendar c = Calendar.getInstance();
-		String fileName =c.get(Calendar.YEAR)+"-"+c.get(Calendar.MONTH)+"-"+c.get(Calendar.DAY_OF_MONTH)+"-"+c.get(Calendar.HOUR_OF_DAY)+"."+c.get(Calendar.MINUTE)+".html";
+		String fileName =c.get(Calendar.YEAR)+"-"+(c.get(Calendar.MONTH)+1)+"-"+c.get(Calendar.DAY_OF_MONTH)+"-"+c.get(Calendar.HOUR_OF_DAY)+"."+c.get(Calendar.MINUTE)+".html";
 		File output = new File(Constants.ROOT + fileName);
 		try {
 			output.createNewFile();
