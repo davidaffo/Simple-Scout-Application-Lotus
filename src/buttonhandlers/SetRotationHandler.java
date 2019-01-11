@@ -41,7 +41,7 @@ public class SetRotationHandler implements SkillHandler {
 	@Override
 	public void handleStartZone(int startZone) {
 		c.setRotation(startZone);
-		c.activateSector(MainController.MAIN_SECTOR, MainController.SAVE);
+		c.activateSector(MainController.MAIN_SECTOR, MainController.NO_SAVE);
 
 	}
 	
