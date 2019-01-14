@@ -425,6 +425,7 @@ public class MainController{
 			w.setPane.setText(Integer.toString(game.actualSet+1));
 			setRotation(1);
 			activateSector(MAIN_SECTOR,NO_SAVE);
+			refresh();
 		}
 	}
 
